@@ -1,0 +1,5 @@
+import { api } from '../../lib/api';
+export default async function Recommendations(){
+ const data=await api('/wards/W003/recommendations'); const sim=await api('/wards/W003/what-if?complaint_reduction=15&traffic_reduction=12&aqi_reduction=10');
+ return <div><h1 className="text-3xl font-bold">AI Recommendations</h1><p className="text-slate-600 mt-2">Priority actions for {data.ward_name}</p><div className="grid md:grid-cols-3 gap-5 mt-6">{data.recommendations.map((r:any,i:number)=><div className="card" key={r.title}><span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">Rank #{i+1} • {r.priority}</span><h2 className="font-bold text-xl mt-4">{r.title}</h2><p className="text-slate-600 mt-2">{r.reason}</p><p className="mt-4 font-semibold">{r.department}</p><p className="text-green-700 font-bold mt-2">Projected impact {r.impact}</p></div>)}</div><div className="card mt-6"><h2 className="font-bold text-xl">What-if Simulator Result</h2><p className="mt-3">Current score: <b>{sim.current.score}</b> → Projected score: <b>{sim.projected.score}</b> | Improvement: <b>+{sim.improvement}</b></p></div></div>
+}

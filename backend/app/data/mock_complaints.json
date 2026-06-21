@@ -1,0 +1,8 @@
+{
+  "complaints": [
+    {"complaint_id":"C001","ward_id":"W001","category":"infrastructure","severity":"high","description":"Large pothole near bus stand causing traffic jams","status":"open","keywords":["pothole","road","traffic","bus"]},
+    {"complaint_id":"C002","ward_id":"W003","category":"sanitation","severity":"high","description":"Garbage not collected for four days near market area","status":"open","keywords":["garbage","waste","sanitation","market"]},
+    {"complaint_id":"C003","ward_id":"W002","category":"water","severity":"medium","description":"Low water pressure in residential lanes during morning","status":"in_progress","keywords":["water","pressure","morning","supply"]},
+    {"complaint_id":"C004","ward_id":"W001","category":"traffic","severity":"medium","description":"Signal timing issue creating congestion at junction","status":"open","keywords":["signal","traffic","congestion","junction"]}
+  ]
+}

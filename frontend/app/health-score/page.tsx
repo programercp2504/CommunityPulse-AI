@@ -1,0 +1,5 @@
+import { api } from '../../lib/api';
+export default async function HealthScore({searchParams}:{searchParams:{ward?:string}}){
+ const ward=searchParams.ward||'W001'; const data=await api(`/wards/${ward}/health-score`);
+ return <div><h1 className="text-3xl font-bold">Community Health Score</h1><div className="grid md:grid-cols-3 gap-6 mt-6"><div className="card text-center"><p className="text-slate-500">{data.ward_name}</p><div className="text-7xl font-extrabold text-blue-600 mt-4">{data.score}</div><p className="mt-2">out of 100</p></div><div className="card md:col-span-2"><h2 className="font-bold text-xl">AI Explanation</h2><p className="mt-3 text-slate-700 leading-7">{data.narrative}</p></div></div><div className="grid md:grid-cols-4 gap-4 mt-6">{Object.entries(data.breakdown).map(([k,v]:any)=><div className="card" key={k}><p className="capitalize text-slate-500">{k.replace('_',' ')}</p><p className="text-3xl font-bold mt-2">{v}/100</p><div className="h-2 bg-slate-100 rounded mt-4"><div className="h-2 bg-blue-600 rounded" style={{width:`${v}%`}} /></div></div>)}</div></div>
+}
