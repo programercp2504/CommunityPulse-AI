@@ -1,2 +1,40 @@
-import Link from 'next/link';
-export default function Home(){return <section className="grid md:grid-cols-2 gap-8 items-center min-h-[75vh]"><div><p className="text-blue-600 font-semibold">Google Cloud Hackathon MVP</p><h1 className="text-5xl font-extrabold mt-3 leading-tight">AI Decision Intelligence for Better Communities</h1><p className="mt-5 text-lg text-slate-600">Analyze ward metrics, citizen complaints, health score changes, and AI recommendations using Gemini-powered insights.</p><div className="mt-8 flex gap-3"><Link className="btn" href="/dashboard">Open Dashboard</Link><Link className="px-4 py-2 rounded-xl border" href="/assistant">Ask AI</Link></div></div><div className="card bg-slate-950 text-white"><h2 className="text-2xl font-bold">Live MVP Modules</h2><div className="grid grid-cols-2 gap-4 mt-6">{['Health Score','Complaint Analyzer','AI Assistant','What-if Simulator'].map(x=><div key={x} className="bg-white/10 p-4 rounded-xl">{x}</div>)}</div></div></section>}
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div className="space-y-10">
+      <section className="card gradient min-h-[420px] flex flex-col justify-center">
+        <p className="text-cyan-100 font-semibold">AI-powered civic decision intelligence</p>
+        <h1 className="text-5xl font-extrabold mt-4">
+          Smarter communities through real-time data and Gemini AI
+        </h1>
+        <p className="text-lg mt-5 max-w-3xl text-slate-100">
+          CommunityPulse AI analyzes ward health, citizen complaints, traffic, air quality and recommends actions for better city decisions.
+        </p>
+        <div className="mt-8 flex gap-4">
+          <Link href="/dashboard" className="bg-white text-blue-700 px-5 py-3 rounded-xl font-bold">
+            Open Dashboard
+          </Link>
+          <Link href="/assistant" className="bg-slate-900 text-white px-5 py-3 rounded-xl font-bold">
+            Ask AI Assistant
+          </Link>
+        </div>
+      </section>
+
+      <section className="grid md:grid-cols-3 gap-5">
+        <div className="card">
+          <h2 className="text-xl font-bold text-cyan-300">Community Score</h2>
+          <p className="text-slate-300 mt-2">0–100 explainable health score for every ward.</p>
+        </div>
+        <div className="card">
+          <h2 className="text-xl font-bold text-cyan-300">Complaint Analyzer</h2>
+          <p className="text-slate-300 mt-2">AI categorizes complaints and detects priority issues.</p>
+        </div>
+        <div className="card">
+          <h2 className="text-xl font-bold text-cyan-300">Recommendations</h2>
+          <p className="text-slate-300 mt-2">Action plans with projected score improvement.</p>
+        </div>
+      </section>
+    </div>
+  );
+}
