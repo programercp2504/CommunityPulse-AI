@@ -2,39 +2,72 @@ import Link from "next/link";
 
 export default function Home() {
   return (
+
     <div className="space-y-10">
-      <section className="card gradient min-h-[420px] flex flex-col justify-center">
-        <p className="text-cyan-100 font-semibold">AI-powered civic decision intelligence</p>
+      <section className="card gradient p-10">
+
+  <div className="mb-4 inline-block px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-300 text-sm font-semibold">
+    Google Cloud APAC Hackathon 2026 Submission
+  </div>
+
+  <p className="text-cyan-200 font-semibold">
+    Google Cloud + Gemini Powered
+  </p>
+
         <h1 className="text-5xl font-extrabold mt-4">
-          Smarter communities through real-time data and Gemini AI
+          CommunityPulse AI
         </h1>
-        <p className="text-lg mt-5 max-w-3xl text-slate-100">
-          CommunityPulse AI analyzes ward health, citizen complaints, traffic, air quality and recommends actions for better city decisions.
+
+        <p className="text-lg mt-5 max-w-3xl">
+          An AI-powered Decision Intelligence Platform that helps
+          communities and city stakeholders analyze data,
+          predict outcomes and improve quality of life.
         </p>
-        <div className="mt-8 flex gap-4">
-          <Link href="/dashboard" className="bg-white text-blue-700 px-5 py-3 rounded-xl font-bold">
-            Open Dashboard
+
+        <div className="mt-8 flex gap-4 flex-wrap">
+          <Link href="/dashboard" className="card">
+            Dashboard
           </Link>
-          <Link href="/assistant" className="bg-slate-900 text-white px-5 py-3 rounded-xl font-bold">
-            Ask AI Assistant
+
+          <Link href="/assistant" className="card">
+            AI Assistant
+          </Link>
+
+          <Link href="/report" className="card">
+            Executive Report
+          </Link>
+
+          <Link href="/simulator" className="card">
+            What-if Simulator
           </Link>
         </div>
       </section>
 
-      <section className="grid md:grid-cols-3 gap-5">
-        <div className="card">
-          <h2 className="text-xl font-bold text-cyan-300">Community Score</h2>
-          <p className="text-slate-300 mt-2">0–100 explainable health score for every ward.</p>
-        </div>
-        <div className="card">
-          <h2 className="text-xl font-bold text-cyan-300">Complaint Analyzer</h2>
-          <p className="text-slate-300 mt-2">AI categorizes complaints and detects priority issues.</p>
-        </div>
-        <div className="card">
-          <h2 className="text-xl font-bold text-cyan-300">Recommendations</h2>
-          <p className="text-slate-300 mt-2">Action plans with projected score improvement.</p>
-        </div>
-      </section>
+      <div className="grid md:grid-cols-4 gap-5">
+  <div className="card">
+    <p className="text-slate-400">Community Health Score</p>
+    <h2 className="text-4xl font-extrabold text-cyan-300">68</h2>
+  </div>
+
+  <div className="card">
+    <p className="text-slate-400">Active Complaints</p>
+    <h2 className="text-4xl font-extrabold text-red-300">68</h2>
+  </div>
+
+  <div className="card">
+    <p className="text-slate-400">Highest Risk Ward</p>
+    <h2 className="text-2xl font-extrabold text-yellow-300">
+      Market South
+    </h2>
+  </div>
+
+  <div className="card">
+    <p className="text-slate-400">Predicted Improvement</p>
+    <h2 className="text-4xl font-extrabold text-green-300">
+      +16
+    </h2>
+  </div>
+</div>
     </div>
   );
 }
